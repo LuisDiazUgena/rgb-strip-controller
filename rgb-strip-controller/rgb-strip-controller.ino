@@ -15,7 +15,7 @@
 SoftwareSerial btSerial(2,3); // 2 To TX 3 to RX
 
 #define PIXEL_PIN 5
-#define PIXEL_COUNT 16
+#define PIXEL_COUNT 25
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_GRB + NEO_KHZ800);
 
