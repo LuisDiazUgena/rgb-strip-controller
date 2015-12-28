@@ -10,26 +10,23 @@
 #include "SoftwareSerial.h"
 #include "Adafruit_NeoPixel.h"
 
-SoftwareSerial btSerial(7, 6);
+// Attiny D2 is pin 11
+// Attiny D3 is pin 12
+SoftwareSerial btSerial(2,3); // 2 To TX 3 to RX
 
-#define PIXEL_PIN 12
-#define PIXEL_COUNT 64
+#define PIXEL_PIN 5
+#define PIXEL_COUNT 16
+
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_GRB + NEO_KHZ800);
 
-int pinLed = 4;
- 
 int red = 0, green = 0, blue = 0;
 int delayLed = 10;
 
 void setup() {
-  pinMode(pinLed,OUTPUT);
-  digitalWrite(pinLed,HIGH);
+
   btSerial.begin(19200);
   strip.begin();
 
-  delay(1000);
-  btSerial.println("LETS FUCKING BEGIN!!");
-  digitalWrite(pinLed,LOW);
 }
 
 void loop() {
@@ -41,7 +38,9 @@ void loop() {
     green = btSerial.parseInt();
     blue = btSerial.parseInt();
 
+
     if (btSerial.read() == '\n') {
+
       red = constrain(red, 0, 255);
       green = constrain(green, 0, 255);
       blue = constrain(blue, 0, 255);
@@ -57,4 +56,5 @@ void colorWipe(uint32_t c, uint8_t wait) {
     strip.show();
     delay(wait);
   }
+  btSerial.println("Color changed!");
 }
