@@ -1,4 +1,4 @@
-update=mié 25 nov 2015 16:23:40 CET
+update=lun 28 dic 2015 14:24:26 CET
 version=1
 last_client=kicad
 [pcbnew]
@@ -63,3 +63,5 @@ LibName31=/home/luisdiaz/Escritorio/git-projects/Kicad-Libs/arduino_shieldsNCL
 LibName32=/home/luisdiaz/Escritorio/git-projects/Kicad-Libs/borniers
 LibName33=/home/luisdiaz/Escritorio/git-projects/Kicad-Libs/Header1x01
 LibName34=/home/luisdiaz/Escritorio/git-projects/Kicad-Libs/IRF3205
+LibName35=/home/luisdiaz/Escritorio/git-projects/Kicad-Libs/bt_header-1x06
+LibName36=/home/luisdiaz/Escritorio/git-projects/Kicad-Libs/icsp
