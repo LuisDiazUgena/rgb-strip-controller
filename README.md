@@ -39,6 +39,10 @@ On protocoder interface click on Connect to Bluetooth and choose your board, wai
 **On/Off switch**: When it's turned on, the color is set to white. When it's turned off, the color is set to black.
 
 ###<a name="updates">Updates</a>
+
 **28-12-2015**
 
-1.  Move common slider code to modifySlider function.
+1. Finished sketch and tested on breadboard
+2. Finished PCB layout
+3. Created Gerbers
+4. Created Gcodes
