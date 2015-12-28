@@ -1,4 +1,4 @@
-update=lun 28 dic 2015 14:24:26 CET
+update=lun 28 dic 2015 17:46:08 CET
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,8 +23,6 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -65,3 +63,5 @@ LibName33=/home/luisdiaz/Escritorio/git-projects/Kicad-Libs/Header1x01
 LibName34=/home/luisdiaz/Escritorio/git-projects/Kicad-Libs/IRF3205
 LibName35=/home/luisdiaz/Escritorio/git-projects/Kicad-Libs/bt_header-1x06
 LibName36=/home/luisdiaz/Escritorio/git-projects/Kicad-Libs/icsp
+[general]
+version=1
