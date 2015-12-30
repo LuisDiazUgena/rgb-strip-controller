@@ -22,15 +22,20 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_GRB + NE
 int red = 0, green = 0, blue = 0;
 int delayLed = 10;
 
-void setup() {
+//Set to false to avoid the fan start working.
+boolean fan = true;
+int pinFan = 0;
 
+void setup() {
+  pinMode(pinFan, OUTPUT);
+  digitalWrite(pinFan, LOW);
   btSerial.begin(19200);
   strip.begin();
 
 }
 
 void loop() {
-
+  checkFan();
   while (btSerial.available() > 0) {
 
     delayLed = btSerial.parseInt();
@@ -57,4 +62,14 @@ void colorWipe(uint32_t c, uint8_t wait) {
     delay(wait);
   }
   btSerial.println("Color changed!");
+}
+
+void checkFan(){
+  if (fan){
+    if (red != 0 || green !=0 || blue != 0 ){ // turn the fan on when the strip is on
+      digitalWrite(pinFan, HIGH);
+    }else{
+      digitalWrite(pinFan, LOW);
+    }
+  }
 }
