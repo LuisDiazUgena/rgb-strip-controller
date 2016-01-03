@@ -26,19 +26,20 @@ boolean ldr = false;
 boolean autoMode = false;
 int pinLDR = A7;
 long nextTime = 0;
-int intervale = 100;
+int intervale = 1000;
 int threshold = 200;
 
 void setup() {
 
-  pinMode(pinLDR, OUTPUT);
+  pinMode(pinLDR, INPUT);
 
   btSerial.begin(19200);
   strip.begin();
+
+  colorWipe(strip.Color(0, 0, 0), 0); // Turn off the strip
 }
 
 void loop() {
-  checkFan();
   //checkLDR();
 
   while (btSerial.available() > 0) {
@@ -73,11 +74,14 @@ void colorWipe(uint32_t c, uint8_t wait) {
 
 void checkLDR(){
   int aktRead = analogRead(pinLDR);
+  int color = map(aktRead,0,1023,0,255);
+  btSerial.print(color);
+
   if(ldr && millis()>nextTime){
       nextTime = millis() + intervale;
       if (autoMode){
-        int color = map(aktRead,0,1023,0,255);
-        colorWipe(strip.Color(color,color,color),0);
+
+        //colorWipe(strip.Color(color,color,color),0);
       }
   }
 }
