@@ -1,4 +1,4 @@
-update=lun 28 dic 2015 17:46:08 CET
+update=sáb 02 ene 2016 12:03:45 CET
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,6 +23,18 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=/home/luisdiaz/Escritorio/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
 [eeschema]
 version=1
 LibDir=
@@ -63,5 +75,4 @@ LibName33=/home/luisdiaz/Escritorio/git-projects/Kicad-Libs/Header1x01
 LibName34=/home/luisdiaz/Escritorio/git-projects/Kicad-Libs/IRF3205
 LibName35=/home/luisdiaz/Escritorio/git-projects/Kicad-Libs/bt_header-1x06
 LibName36=/home/luisdiaz/Escritorio/git-projects/Kicad-Libs/icsp
-[general]
-version=1
+LibName37=/home/luisdiaz/Escritorio/git-projects/Kicad-Libs/ldr
