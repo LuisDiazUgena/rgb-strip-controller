@@ -35,6 +35,7 @@ LIBS:Header1x01
 LIBS:IRF3205
 LIBS:bt_header-1x06
 LIBS:icsp
+LIBS:ldr
 LIBS:rgb-strip-cache
 EELAYER 25 0
 EELAYER END
@@ -165,8 +166,8 @@ Text GLabel 7600 1200 1    60   Input ~ 0
 PixelPin
 Text Notes 8500 2850 0    60   ~ 0
 uC 
-Text Notes 3800 3500 0    60   ~ 0
-Pixel Header
+Text Notes 3800 4400 0    60   ~ 0
+LDR circuit
 $Comp
 L BT_Header-1x06 P1
 U 1 1 568168DC
@@ -325,7 +326,7 @@ Wire Notes Line
 Wire Wire Line
 	2050 1500 2800 1500
 Wire Wire Line
-	2300 1700 2050 1700
+	2050 1700 2300 1700
 Wire Wire Line
 	2050 1600 2200 1600
 Wire Wire Line
@@ -382,7 +383,7 @@ Wire Notes Line
 Wire Notes Line
 	9000 3050 6600 3050
 Wire Wire Line
-	2300 1850 2300 1700
+	2300 1700 2300 1850
 $Comp
 L C C3
 U 1 1 56819631
@@ -426,10 +427,6 @@ GND
 Text GLabel 4000 1500 2    60   Input ~ 0
 VCC
 Connection ~ 3800 1500
-Text GLabel 7500 2400 2    60   Input ~ 0
-FAN
-Wire Wire Line
-	7500 2400 7300 2400
 Wire Wire Line
 	7400 1800 7300 1800
 Wire Wire Line
@@ -444,4 +441,49 @@ Wire Wire Line
 	7350 1700 7350 1650
 Wire Wire Line
 	7350 1650 7400 1650
+$Comp
+L R R3
+U 1 1 5687BBA1
+P 3950 4000
+F 0 "R3" V 4030 4000 50  0000 C CNN
+F 1 "10K" V 3950 4000 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3880 4000 30  0001 C CNN
+F 3 "" H 3950 4000 30  0000 C CNN
+	1    3950 4000
+	0    1    1    0   
+$EndComp
+$Comp
+L LDR R2
+U 1 1 5687BD6A
+P 3450 4000
+F 0 "R2" V 3530 4000 50  0000 C CNN
+F 1 "LDR" V 3450 4000 50  0000 C CNN
+F 2 "" V 3380 4000 50  0000 C CNN
+F 3 "" H 3450 4000 50  0000 C CNN
+	1    3450 4000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3600 4000 3800 4000
+Text GLabel 4200 4000 2    60   Input ~ 0
+VCC
+Text GLabel 3200 4000 0    60   Input ~ 0
+GND
+Wire Wire Line
+	4200 4000 4100 4000
+Wire Notes Line
+	2900 4450 2900 3700
+Wire Notes Line
+	2900 4450 4450 4450
+Wire Notes Line
+	2900 3700 4450 3700
+Wire Notes Line
+	4450 3700 4450 4450
+Text GLabel 3700 4100 3    60   Input ~ 0
+LDR
+Wire Wire Line
+	3700 4000 3700 4100
+Connection ~ 3700 4000
+Wire Wire Line
+	3300 4000 3200 4000
 $EndSCHEMATC

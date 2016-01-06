@@ -207,17 +207,17 @@ F 3 "" H 7400 3550 60  0000 C CNN
 	1    7400 3550
 	1    0    0    -1  
 $EndComp
-Text GLabel 7100 3850 0    60   Input ~ 0
-RST
-Text GLabel 8200 3850 2    60   Input ~ 0
-GND
-Text GLabel 8200 3550 2    60   Input ~ 0
-VCC
 Text GLabel 7100 3700 0    60   Input ~ 0
-SCK
+RST
 Text GLabel 7100 3550 0    60   Input ~ 0
-MISO
+GND
 Text GLabel 8200 3700 2    60   Input ~ 0
+VCC
+Text GLabel 8200 3550 2    60   Input ~ 0
+SCK
+Text GLabel 8200 3850 2    60   Input ~ 0
+MISO
+Text GLabel 7100 3850 0    60   Input ~ 0
 MOSI
 Text GLabel 7400 2000 2    60   Input ~ 0
 SCK
