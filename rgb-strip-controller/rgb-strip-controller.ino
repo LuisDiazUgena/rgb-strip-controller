@@ -80,8 +80,11 @@ void checkLDR(){
   if(ldr && millis()>nextTime){
       nextTime = millis() + intervale;
       if (autoMode){
-
+        //Change color automaticly using the ldr
         //colorWipe(strip.Color(color,color,color),0);
+      }else{
+
+
       }
   }
 }
