@@ -22,26 +22,28 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(PIXEL_COUNT, PIXEL_PIN, NEO_GRB + NE
 int red = 0, green = 0, blue = 0;
 int delayLed = 10;
 
-boolean ldr = false;
-boolean autoMode = false;
-int pinLDR = A7;
+boolean ldr = true;
+boolean autoMode = true;
+//int pinLDR = A7; //Attiny pin
+int pinLDR = A0; //Arduino pin - just for test
 long nextTime = 0;
 int intervale = 1000;
-int threshold = 200;
+int threshold = 500;
 
 void setup() {
 
   pinMode(pinLDR, INPUT);
 
-  btSerial.begin(19200);
+  Serial.begin(19200);
+  //btSerial.begin(19200);
   strip.begin();
 
   colorWipe(strip.Color(0, 0, 0), 0); // Turn off the strip
 }
 
 void loop() {
-  //checkLDR();
-
+  checkLDR();
+  delay(1000);
   while (btSerial.available() > 0) {
 
     delayLed = btSerial.parseInt();
@@ -75,16 +77,38 @@ void colorWipe(uint32_t c, uint8_t wait) {
 void checkLDR(){
   int aktRead = analogRead(pinLDR);
   int color = map(aktRead,0,1023,0,255);
+  Serial.print(aktRead);
+  Serial.print("\t");
+  Serial.println(color);
   btSerial.print(color);
 
   if(ldr && millis()>nextTime){
       nextTime = millis() + intervale;
       if (autoMode){
-        //Change color automaticly using the ldr
-        //colorWipe(strip.Color(color,color,color),0);
+        // Change color automaticly using the ldr
+        colorWipe(strip.Color(color,color,color),0);
       }else{
-        
+        //turn on//off due a value
+        if (ldr > threshold){
+          fadetoWhite();
+        }else{
+          fadetoBlack();
+        }
 
       }
+  }
+}
+
+void fadetoWhite(){
+  for(int i=0;i<256;i++){
+    colorWipe(strip.Color(i, i, i), delayLed);
+    delay(10);
+  }
+}
+
+void fadetoBlack(){
+  for(int i=255;i>=0;i--){
+    colorWipe(strip.Color(i, i, i), delayLed);
+    delay(10);
   }
 }
