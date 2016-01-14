@@ -83,7 +83,7 @@ void checkLDR(){
         //Change color automaticly using the ldr
         //colorWipe(strip.Color(color,color,color),0);
       }else{
-
+        
 
       }
   }
