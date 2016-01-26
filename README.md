@@ -10,7 +10,7 @@ It uses an Attiny 84 to run the code and a HC-06 bluetooth module to communicate
 
 You can find a production board in [Hardware/For Manufacturing folder](https://github.com/LuisDiazUgena/rgb-strip-controller/tree/master/Hardware/For%20manufacturing)
 
-<img src="board.png" alt="PCB Layout" width="100%" align = "center" />
+<img src="board.jpg" alt="PCB Layout" width="100%" align = "center" />
 
 The board it's designed to be milled with [Cyclone](https://store.bq.com/es/cyclone), an open source CNC(Project [here](https://github.com/carlosgs/Cyclone-PCB-Factory)).
 
