@@ -8,13 +8,17 @@ Please check out <a href="#updates">updates</a> below.
 
 It uses an Attiny 84 to run the code and a HC-06 bluetooth module to communicate with Bluetooth with an [app](https://github.com/LuisDiazUgena/Hack-A-Lamp/).
 
-<img src="pcb-layout.png" alt="PCB Layout" width="100%" align = "center" />
+You can find a production board in [Hardware/For Manufacturing folder](https://github.com/LuisDiazUgena/rgb-strip-controller/tree/master/Hardware/For%20manufacturing)
+
+<img src="board.png" alt="PCB Layout" width="100%" align = "center" />
 
 The board it's designed to be milled with [Cyclone](https://store.bq.com/es/cyclone), an open source CNC(Project [here](https://github.com/carlosgs/Cyclone-PCB-Factory)).
 
 # Software
 
 I've created a sketch that uses [Neopixel library by Adafruit](https://github.com/adafruit/Adafruit_NeoPixel) to control Neopixel strip.
+
+You can find it under [rgb-strip-controller](https://github.com/LuisDiazUgena/rgb-strip-controller/tree/master/rgb-strip-controller) folder
 
 ## Usage
 
@@ -24,9 +28,9 @@ Download the project and move .proto file to your smartphone (**recommended**) o
 
 You can also open Protocoder file on your computer and copy it into an empty project on Protocoder web IDE.
 
-**If your Arduino or Arduino cloned board doesn't have a Bluetooth module, you should connect a BT module and handle to receive data over BT-Serial.**
+**If your Arduino/Arduino cloned board/board doesn't have a Bluetooth module, you should connect a BT module and handle to receive data over BT-Serial.**
 
-Upload *hack-a-lamp_arduino.ino* file to your Arduino board.
+Upload *rgb-strip-controller.ino* file to your Arduino board.
 
 Install protocoder apk on your device and then, with a file explorer, open *projects_Hack-a-lamp.proto* file with protocoder. Then run it on your device.
 
@@ -39,6 +43,11 @@ On protocoder interface click on Connect to Bluetooth and choose your board, wai
 **On/Off switch**: When it's turned on, the color is set to white. When it's turned off, the color is set to black.
 
 ###<a name="updates">Updates</a>
+
+
+**26-01-2016**
+
+1. Recieved pcb boards and testing. It works!
 
 **28-12-2015**
 
